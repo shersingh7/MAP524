@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name" translatable="false">ZZApp</string>
+    <string name="hint_name">Enter Name</string>
+    <string name="hint_email">Enter Email</string>
+    <string name="gender" translatable="false">Gender</string>
+    <string name="male">Male</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_birthdate">Enter Birthdate</string>
+    <string name="create_account">Create Account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enter_password">Enter Password</string>
+</resources>
