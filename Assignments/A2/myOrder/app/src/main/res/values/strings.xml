@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">DAVINDER_MyORDER</string>
+    <string name="hint_name">Enter Name</string>
+    <string name="hint_email">Enter Email</string>
+    <string name="gender" translatable="false">Gender</string>
+    <string name="male" translatable="false">Male</string>
+    <string name="enter_phone_number" translatable="false">Enter Phone Number</string>
+    <string name="enter_birthdate" translatable="false">Enter Birthdate</string>
+    <string name="create_account" translatable="false">Create Account</string>
+    <string name="confirm_password" translatable="false">Confirm Password</string>
+    <string name="enter_password" translatable="false">Enter Password</string>
+    <string name="prompt_game" translatable="false">I have a number between 1 to 25. \nCan you guess it correctly? \nYou have 5 attempts.</string>
+</resources>
