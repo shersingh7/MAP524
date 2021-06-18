@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LocationServices</string>
+    <string name="geocoding">Geocoding</string>
+    <string name="reverse_geocoding">Reverse Geocoding</string>
+    <string name="placeholder_reverse_geocoding">Coordinates will be displayed here</string>
+    <string name="placeholder_geocoding">Postal address will be displayed here</string>
+    <string name="hint_enter_address">Enter address</string>
+</resources>
