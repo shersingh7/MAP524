@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/rv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_phoneNumberLayout"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/rv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number: "
+            android:layout_marginStart="15dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="166dp" />
+
+        <TextView
+            android:id="@+id/rv_output_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="output"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="247dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/rv_emailLayout">
+
+
+        <TextView
+            android:id="@+id/rv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: "
+            android:layout_marginStart="15dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="166dp" />
+
+        <TextView
+            android:id="@+id/rv_output_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="output"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="247dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_addressLayout"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/rv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address:"
+            android:layout_marginStart="15dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="166dp" />
+
+        <TextView
+            android:id="@+id/rv_output_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="output"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="247dp" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
