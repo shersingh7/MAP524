@@ -4,12 +4,14 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -171,6 +173,7 @@ public class LocationHelper {
             return obtainedLocation;
 
         }catch (Exception ex){
+
             Log.e(TAG, "performReverseGeocoding: Couldn't get the coordinates for given address " + ex.getLocalizedMessage() );
         }
 

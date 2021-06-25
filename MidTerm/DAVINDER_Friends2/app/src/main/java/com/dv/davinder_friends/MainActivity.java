@@ -27,6 +27,8 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 
+import static java.lang.Integer.getInteger;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -41,9 +43,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Friend newFriend;
 
-    private LocationHelper locationHelper;
-    private Location lastLocation;
-    private LocationCallback locationCallback;
 
     ArrayList<Friend> list = new ArrayList<>();
 
@@ -61,40 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.eEmail = findViewById(R.id.editEmail);
         this.eNumber = findViewById(R.id.editNumber);
         this.eAddress = findViewById(R.id.editAddress);
-
-        //this.binding.btnReverseGeocoding.setOnClickListener(this::onClick);
-        //this.binding.btnOpenMap.setOnClickListener(this::onClick);
-
-        this.locationHelper = LocationHelper.getInstance();
-        this.locationHelper.checkPermissions(this);
-
-        if (this.locationHelper.locationPermissionGranted) {
-            Log.d(TAG, "onCreate: Location Permission Granted");
-
-            this.locationHelper.getLastLocation(this).observe(this, new Observer<Location>() {
-
-                @Override
-                public void onChanged(Location location) {
-                    if (location != null) {
-                        lastLocation = location;
-//                        binding.tvLocationAddress.setText(lastLocation.toString());
-
-                        Address obtainedAddress = locationHelper.performForwardGeocoding(getApplicationContext(), lastLocation);
-//                        if (obtainedAddress != null) {
-//                            binding.tvLocationAddress.setText(obtainedAddress.getAddressLine(0));
-//                        } else {
-//                            binding.tvLocationAddress.setText("Address for Last Location not obtained");
-//                        }
-                    }
-                }
-            });
-
-            this.initiateLocationListener();
-
-
-        } else {
-            Log.d(TAG, "onCreate: Location Permission Denied");
-        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -123,7 +88,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     this.newFriend = new Friend();
 
                     this.newFriend.setName(this.eName.getText().toString());
-                    this.newFriend.setEmail(this.eEmail.getText().toString());
+
+                    if(this.eEmail.getText().toString().isEmpty()){
+                        this.newFriend.setEmail("Not Provided");
+                    }else this.newFriend.setEmail(this.eEmail.getText().toString());
+
                     this.newFriend.setPhone(Integer.valueOf(this.eNumber.getText().toString()));
                     this.newFriend.setAddress(this.eAddress.getText().toString());
 
@@ -183,11 +152,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             this.eName.setError("Name can't be empty");
             input = false;
         }
-        else if(this.eNumber.getText().toString().isEmpty()){
+
+        if(this.eNumber.getText().toString().isEmpty()){
             this.eNumber.setError("Phone Number can't be empty");
             input = false;
-            //Should only be 10 numbers
-        }else if(this.eAddress.getText().toString().isEmpty()){
+        }else {
+            if(!correctNumber()){
+                this.eNumber.setError("Phone Number should be 10-12 digits!!!");
+                this.eNumber.setText("");
+                input = false;
+            }
+
+        }
+
+        if(this.eAddress.getText().toString().isEmpty()){
             this.eAddress.setError("Address can't be empty");
             input = false;
         }
@@ -195,63 +173,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return input;
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    private Boolean correctNumber(){
+        boolean ok = false;
 
-        if (requestCode == this.locationHelper.REQUEST_CODE_LOCATION){
-            this.locationHelper.locationPermissionGranted = (grantResults.length > 0 &&
-                    grantResults[0] == PackageManager.PERMISSION_GRANTED);
+        int digits = String.valueOf(this.eNumber.getText().toString()).length();
+        Log.d(TAG, "correctNumber: NUMBER OF DIGITS " + digits );
+        if(digits >= 10 && digits <= 12) ok = true;
 
-            if (this.locationHelper.locationPermissionGranted){
-                Log.d(TAG, "onRequestPermissionsResult: Result --- Location Permission Granted "
-                        + this.locationHelper.locationPermissionGranted);
-            }
-        }
+        return ok;
     }
 
-    private void initiateLocationListener(){
-        this.locationCallback = new LocationCallback() {
-            @Override
-            public void onLocationResult(@NonNull LocationResult locationResult) {
-                for (Location loc : locationResult.getLocations()){
-                    lastLocation = loc;
-//                    binding.tvLocationAddress.setText(lastLocation.toString());
-
-                    Address obtainedAddress = locationHelper.performForwardGeocoding(getApplicationContext(), lastLocation);
-                    if (obtainedAddress != null){
-                        Log.d(TAG, "onLocationResult: Country code : " + obtainedAddress.getCountryCode());
-                        Log.d(TAG, "onLocationResult: Country : " + obtainedAddress.getCountryName());
-                        Log.d(TAG, "onLocationResult: City : " + obtainedAddress.getLocality());
-                        Log.d(TAG, "onLocationResult: Postal Code : " + obtainedAddress.getPostalCode());
-                        Log.d(TAG, "onLocationResult: Province : " + obtainedAddress.getAdminArea());
-                    }
-                }
-            }
-        };
-
-        this.locationHelper.requestLocationUpdates(this, locationCallback);
-    }
-
-    private void openMap(){
-        Log.d(TAG, "onClick: Open map to show location");
-        Intent mapIntent = new Intent(this, MapsActivity.class);
-        mapIntent.putExtra("EXTRA_LAT", this.lastLocation.getLatitude());
-        mapIntent.putExtra("EXTRA_LNG", this.lastLocation.getLongitude());
-        startActivity(mapIntent);
-    }
-
-    private void doReverseGeocoding(){
-        Log.d(TAG, "onClick: Perform reverse geocoding to get coordinates from address.");
-        if (this.locationHelper.locationPermissionGranted){
-            String givenAddress = this.binding.editAddress.getText().toString();
-            LatLng obtainedCoordinates = this.locationHelper.performReverseGeocoding(this, givenAddress);
-
-            if (obtainedCoordinates != null){
-
-            }else{
-            }
-        }else{
-        }
-    }
 }
