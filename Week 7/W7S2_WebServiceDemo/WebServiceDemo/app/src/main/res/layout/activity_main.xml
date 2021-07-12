@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <Spinner
+        android:id="@+id/spn_categories"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="24dp"/>
+
+    <Button
+        android:id="@+id/btn_get_receipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Random Recipe"/>
+
+    <TextView
+        android:id="@+id/tv_receipe_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"/>
+
+    <TextView
+        android:id="@+id/tv_region_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"/>
+
+    <ImageView
+        android:id="@+id/img_receipe_thumb"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="24dp"/>
+</LinearLayout>

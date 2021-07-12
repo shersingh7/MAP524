@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * WebServiceDemo Created by jkp.
  */
 public class CategoryContainer {
-    private @SerializedName("current") ArrayList<Category> categoryList;
+    private @SerializedName("categories") ArrayList<Category> categoryList;
 
     public ArrayList<Category> getCategoryList() {
         return categoryList;

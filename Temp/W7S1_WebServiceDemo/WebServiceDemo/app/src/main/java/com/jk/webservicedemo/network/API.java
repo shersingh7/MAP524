@@ -11,9 +11,9 @@ import retrofit2.http.GET;
 public interface API {
     //must use https - secured
     //must end with /
-    String BASE_URL = "http://api.weatherapi.com/v1/";
+    String BASE_URL = "https://www.themealdb.com/api/json/v1/1/";
 
 //    @GET("./list.php?c=list")
-    @GET("./current.json")
+    @GET("./categories.php")
     Call<CategoryContainer> retrieveCategories();
 }

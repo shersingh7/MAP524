@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
  * WebServiceDemo Created by jkp.
  */
 public class Category {
-    private @SerializedName("temp_c") String categoryName;
+    private @SerializedName("strCategory") String categoryName;
 
     public String getCategoryName() {
         return categoryName;
