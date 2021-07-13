@@ -1,4 +1,4 @@
-package com.dv.davinder_friends;
+package com.dv.davinder_weather;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -35,7 +35,7 @@ public class LocationHelper {
     public final int REQUEST_CODE_LOCATION = 101;
     private LocationRequest locationRequest;
     private FusedLocationProviderClient fusedLocationProviderClient = null;
-    //    Location mLocation;
+
     MutableLiveData<Location> mLocation = new MutableLiveData<>();
 
     private static final LocationHelper singletonInstance = new LocationHelper();
@@ -47,7 +47,7 @@ public class LocationHelper {
     private LocationHelper(){
         this.locationRequest = new LocationRequest();
         this.locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        this.locationRequest.setInterval(10000); // 10 seconds
+        this.locationRequest.setInterval(1000); // 1 second
     }
 
     public void checkPermissions(Context context){
@@ -75,7 +75,6 @@ public class LocationHelper {
     }
 
     @SuppressLint("MissingPermission")
-//    public Location getLastLocation(Context context){
     public MutableLiveData<Location> getLastLocation(Context context){
         Log.d(TAG, "getLastLocation: location helper initiated");
         if (this.locationPermissionGranted){
@@ -86,9 +85,6 @@ public class LocationHelper {
                             @Override
                             public void onSuccess(Location location) {
                                 if (location != null){
-//                                    mLocation = new Location(location);
-//                                    Log.d(TAG, "onSuccess: Last Location -- Latitude : " + mLocation.getLatitude() +
-//                                            " Longitude : " + mLocation.getLongitude());
 
                                     mLocation.setValue(location);
                                     Log.d(TAG, "onSuccess: Last Location -- Latitude : " + mLocation.getValue().getLatitude() +
@@ -177,4 +173,5 @@ public class LocationHelper {
 
         return null;
     }
+
 }
