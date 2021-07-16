@@ -1,6 +1,5 @@
 package com.dv.davinder_weather.models;
 
-
 import com.google.gson.annotations.SerializedName;
 
 public class Condition {

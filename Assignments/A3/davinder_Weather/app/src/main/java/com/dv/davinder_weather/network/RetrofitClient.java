@@ -7,8 +7,6 @@ public class RetrofitClient {
     private static Retrofit retrofit = null;
     public static String BASE_URL = "http://api.weatherapi.com/v1/";
 
-
-
     public static Retrofit getRetrofit(){
 
         if(retrofit == null){

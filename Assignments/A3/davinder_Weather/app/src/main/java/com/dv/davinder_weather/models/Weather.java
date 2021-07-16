@@ -15,15 +15,6 @@ public class Weather {
     @SerializedName("temp_c")
     String temp;
 
-
-    // location -> City Name
-    //@SerializedName("cloud")
-    //String cloud;
-
-    // location -> country
-//    @SerializedName("cloud")
-//    String cloud;
-
     //condition
     @SerializedName("condition")
     Condition condition;
@@ -51,12 +42,6 @@ public class Weather {
     //visibility
     @SerializedName("vis_km")
     String visibility;
-
-
-
-
-
-
 
     public String getName() {
         return name;

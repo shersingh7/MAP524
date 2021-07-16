@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class WeatherContainer {
 
-
     @SerializedName("current")
     private Weather weather;
 
