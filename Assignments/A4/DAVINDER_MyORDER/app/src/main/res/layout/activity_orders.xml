@@ -8,19 +8,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="407dp"
-        android:layout_height="745dp"
+        android:layout_width="395dp"
+        android:layout_height="740dp"
         android:layout_margin="8dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="75dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name" />
 
     <TextView
         android:id="@+id/app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:background="@android:color/holo_green_dark"
         android:text="Orders"
         android:textAlignment="center"
