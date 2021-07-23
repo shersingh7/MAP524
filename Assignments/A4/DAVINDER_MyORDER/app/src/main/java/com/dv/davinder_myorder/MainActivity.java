@@ -2,6 +2,7 @@ package com.dv.davinder_myorder;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,7 +16,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.dv.davinder_myorder.adapters.OrderAdapter;
+import com.dv.davinder_myorder.database.Coffee;
+import com.dv.davinder_myorder.database.CoffeeDAO;
 import com.dv.davinder_myorder.models.OrderList;
+import com.dv.davinder_myorder.viewModels.CoffeeViewModel;
 
 import java.util.ArrayList;
 
@@ -28,10 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView qtyOutput;
     private RadioGroup coffeeSizeGroup;
     private RadioGroup coffeeTypeGroup;
+    private Integer tempCoffeeID = 0;
 
     int qtyValue = 0; //Quantity of the coffee
-
-    ArrayList<OrderList> orderArrayList = new ArrayList<>();
+    private CoffeeViewModel coffeeViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         this.qtyOutput = findViewById(R.id.qty);
         this.qtyOutput.setText("0");
+
+        this.coffeeViewModel = new ViewModelProvider(this).get(CoffeeViewModel.class);
 
         coffeeSizeGroup = (RadioGroup) findViewById(R.id.cSize);
         coffeeTypeGroup = (RadioGroup) findViewById(R.id.cType);
@@ -108,14 +115,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void saveOrder(RadioButton size, RadioButton type) {
-        OrderList current = new OrderList();
-        current.setCoffeeQty(qtyValue);
-        current.setCoffeeSize(size.getText().toString());
-        current.setCoffeeType(type.getText().toString());
+//        OrderList current = new OrderList();
+//        current.setCoffeeQty(qtyValue);
+//        current.setCoffeeSize(size.getText().toString());
+//        current.setCoffeeType(type.getText().toString());
+//        current.setCoffeeID(tempCoffeeID++);
 
-        this.orderArrayList.add(current);
+//
+        Coffee newCoffee = new Coffee();
+        newCoffee.setCoffeeQty(qtyValue);
+        newCoffee.setCoffeeSize(size.getText().toString());
+        newCoffee.setCoffeeType(type.getText().toString());
+        newCoffee.setCoffeeID(tempCoffeeID++);
 
-        Log.d(TAG, "saveOrder: "+ orderArrayList);
+        this.coffeeViewModel.insertCoffee(newCoffee);
+
+        Log.d(TAG, "saveOrder: Item inserted: " + newCoffee.toString());
+
+
+       // this.orderArrayList.add(current);
+
+        //Log.d(TAG, "saveOrder: "+ orderArrayList);
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
@@ -131,7 +151,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void showOrder(){
         Intent listOrderIntent = new Intent(this, OrdersActivity.class);
-        listOrderIntent.putExtra("EXTRA_COFFEE_ORDER_OBJ", this.orderArrayList);
         startActivity(listOrderIntent);
     }
 

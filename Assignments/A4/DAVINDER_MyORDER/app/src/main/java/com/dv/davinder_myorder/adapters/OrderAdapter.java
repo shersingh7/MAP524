@@ -3,11 +3,13 @@ package com.dv.davinder_myorder.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dv.davinder_myorder.database.Coffee;
 import com.dv.davinder_myorder.databinding.RvItemsOrdersBinding;
 import com.dv.davinder_myorder.models.OrderList;
 
@@ -18,10 +20,12 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     private final String TAG = "OrderAdapter: ";
     private final Context context;
     private final ArrayList<OrderList> list;
+    private final OnOrderListClickListener orderListClickListener;
 
-    public OrderAdapter(Context context, ArrayList<OrderList> list) {
+    public OrderAdapter(Context context, ArrayList<OrderList> list, OnOrderListClickListener orderListClickListener) {
         this.context = context;
         this.list = list;
+        this.orderListClickListener = orderListClickListener;
     }
 
     @Override
@@ -34,7 +38,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
 
         final OrderList current = this.list.get(position);
-        holder.bind(context, current);
+        holder.bind(context, current, orderListClickListener);
     }
 
     @Override
@@ -51,10 +55,17 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             this.binding = b;
         }
 
-        public void bind(Context context, final OrderList currentList){
+        public void bind(Context context, final OrderList currentList, final OnOrderListClickListener clickListener){
             binding.rvCoffee.setText(currentList.getCoffeeType());
             binding.rvSize.setText(currentList.getCoffeeSize());
             binding.rvQty.setText(currentList.getCoffeeQty().toString());
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickListener.onOrderListClicked(currentList);
+                }
+            });
         }
     }
 
