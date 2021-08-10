@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Order");
-        alert.setMessage("You have successfull ordered the coffee \nDo you want to order another one?");
+        alert.setMessage("You have successful ordered the coffee \nDo you want to order another one?");
 
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override

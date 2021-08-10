@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FireDemo</string>
+    <string name="phone">Phone</string>
+    <string name="name">Name</string>
+    <string name="save">Save</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="make_new_friend">Make New Friend</string>
+</resources>

@@ -52,6 +52,8 @@ public class MenuActivity extends AppCompatActivity implements OnMealItemClickLi
         this.binding.rvMenuList.setLayoutManager(new LinearLayoutManager(this));
         this.binding.rvMenuList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
+        Log.d(TAG, "onCreate: rvMenuList: " + menuItemList);
+
         this.selectedCategory = this.getIntent().getStringExtra("EXTRA_CATEGORY");
         if (!this.selectedCategory.isEmpty()){
             this.getMenuItems();
@@ -62,6 +64,8 @@ public class MenuActivity extends AppCompatActivity implements OnMealItemClickLi
         Call<MenuContainer> call = RetrofitClient.getInstance().getApi().retrieveMealsByCategory(this.selectedCategory);
 
         try{
+            Log.d(TAG, "onResponse: menuItemList: before response" + menuItemList);
+
             call.enqueue(new Callback<MenuContainer>() {
                 @Override
                 public void onResponse(Call<MenuContainer> call, Response<MenuContainer> response) {
@@ -72,6 +76,7 @@ public class MenuActivity extends AppCompatActivity implements OnMealItemClickLi
                         menuItemList.clear();
                         menuItemList.addAll(main_response.getMeals());
                         adapter.notifyDataSetChanged();
+                        Log.d(TAG, "onResponse: menuItemList: " + menuItemList);
                     }else{
                         Log.e(TAG, "onResponse: No response received");
                     }

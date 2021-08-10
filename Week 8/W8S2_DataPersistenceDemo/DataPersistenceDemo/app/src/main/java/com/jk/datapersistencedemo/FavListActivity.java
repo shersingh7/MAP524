@@ -53,7 +53,7 @@ public class FavListActivity extends AppCompatActivity implements OnMealItemClic
 
         this.mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
 
-        //get all teh fav meals from DB
+        //get all the fav meals from DB
         this.mealViewModel.getAllFavMeals().observe(this, new Observer<List<Meal>>() {
             @Override
             public void onChanged(List<Meal> mealList) {

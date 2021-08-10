@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/College/Computer Programmer/SEM 4/MAP524/Assignments/A2/myOrder/DAVINDER_MyORDER/app/src/main/res/layout/activity_main.xml" value="0.15164473684210528" />
+        <entry key="..\:/College/Computer Programmer/SEM 4/MAP524/Assignments/A2/myOrder/DAVINDER_MyORDER/app/src/main/res/layout/activity_orders.xml" value="0.1567622950819672" />
+        <entry key="..\:/College/Computer Programmer/SEM 4/MAP524/Assignments/A2/myOrder/DAVINDER_MyORDER/app/src/main/res/layout/rv_items_orders.xml" value="0.1567622950819672" />
+        <entry key="..\:/College/Computer Programmer/SEM 4/MAP524/Assignments/A2/myOrder/DAVINDER_MyORDER/app/src/main/res/menu/menu_home.xml" value="0.16052631578947368" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

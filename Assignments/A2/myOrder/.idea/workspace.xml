@@ -28,10 +28,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c70917c3-8d7d-43dc-b404-4144a079c52a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../A1/app/app/src/main/java/com/example/davinder_hydrocalc/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/app/app/src/main/java/com/example/davinder_hydrocalc/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/myOrder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myOrder.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Final/test/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Week 3/W3S2_ZZApp/ZZApp/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week 3/W3S2_ZZApp/ZZApp/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAVINDER_MyORDER/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAVINDER_MyORDER/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAVINDER_MyORDER/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DAVINDER_MyORDER/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAVINDER_MyORDER/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAVINDER_MyORDER/app/src/main/java/com/dv/davinder_myorder/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/DAVINDER_MyORDER/app/src/main/java/com/dv/davinder_myorder/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A3/davinder_Weather/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A3/davinder_Weather/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A3/davinder_Weather/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A3/davinder_Weather/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A3/davinder_Weather/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A4/DAVINDER_MyORDER/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A4/DAVINDER_MyORDER/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A4/DAVINDER_MyORDER/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../A4/DAVINDER_MyORDER/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A4/DAVINDER_MyORDER/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../A4/DAVINDER_MyORDER/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week 10/CompletedCode_FireDemo.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week 7/W7S1_WebServiceDemo/WebServiceDemo/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week 7/W7S1_WebServiceDemo/WebServiceDemo/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week 7/W7S1_WebServiceDemo/WebServiceDemo/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week 8/W8S2_DataPersistenceDemo/DataPersistenceDemo/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week 8/W8S2_DataPersistenceDemo/DataPersistenceDemo/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week 8/W8S2_DataPersistenceDemo/DataPersistenceDemo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week 8/W8S2_DataPersistenceDemo/DataPersistenceDemo/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week 8/W8S2_DataPersistenceDemo/DataPersistenceDemo/.idea/runConfigurations.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
